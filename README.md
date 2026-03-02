@@ -105,3 +105,9 @@ homelab/
 | nginx reverse proxy | `proxmox_system` | Installs nginx; port 443 proxies to pveproxy on 8006, port 80 redirects to HTTPS |
 | Wildcard TLS cert | `proxmox_system` | Let's Encrypt wildcard cert (`*.<domain>`) via Cloudflare DNS-01 challenge |
 | Cert deployment | `proxmox_system` | Deploys cert + key to Proxmox and reloads nginx; auto-renews when < 30 days remain |
+
+
+## random
+
+ no idea what/why but for some god forsaken reason the provider for acme putting the TXT record in cloudflare does something hidden and wrong
+ and required me to save the contents of the record, create a new record with with the same _acme-challenge name by hand, delete the old one, and update the new one with the same contents, then wait for the TTL to expire. Then, and only then, would the record update.
