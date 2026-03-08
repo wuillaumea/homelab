@@ -7,7 +7,7 @@ variable "proxmox_root_password" {
 variable "proxmox_host" {
   description = "Hostname or IP of the Proxmox server (used for SSH)"
   type        = string
-  default     = "prox.local"
+  default     = "proxmox.dunkurjunk.net"
 }
 
 variable "proxmox_node" {
@@ -34,5 +34,10 @@ variable "cloudflare_zone_id" {
 
 variable "acme_email" {
   description = "Email address for Let's Encrypt registration"
+  type        = string
+}
+
+variable "ssh_public_key" {
+  description = "SSH public key to inject into cloud-init VMs"
   type        = string
 }
