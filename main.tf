@@ -18,4 +18,7 @@ module "docker_vm" {
   proxmox_host          = var.proxmox_host
   proxmox_node          = var.proxmox_node
   ssh_public_key        = var.ssh_public_key
+  cores                 = 4
+  memory                = 16384
+  disk_size             = "250G"
 }
